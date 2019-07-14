@@ -7,8 +7,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Random;
 import android.widget.Button;
+
+import java.util.Collections;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     TextView num4;
     TextView num5;
     TextView num6;
+
+    int max =77;   // MAX
+    int min= 1;  //MIN
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private void assign(){
         ArrayList num= GetFive();
 
+        Collections.sort(num);
         // Getting the Textfield from viewer and changing text.
         num1 =  (TextView) findViewById(R.id.num1);
 
@@ -95,8 +102,7 @@ public class MainActivity extends AppCompatActivity {
         // Filling the List up with Numbers and making sure there are no repeats.
         do {
             int nuum=0;
-            int max =7;   // MAX
-            int min= 1;  //MIN
+
 
             // FIRST NUMBER
             if(LottoNum.size() == 0){
